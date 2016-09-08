@@ -17,17 +17,17 @@ var geoFence = require('google.geofence');
 
 geoFence.addEventListener('enterregions', function(e) {
 	var regions = JSON.parse(e.regions);
-	Ti.API.info("Entered geofence: " + regions.identifier);
-	alert("Entered geofence: " + regions.identifier);
+	Ti.API.info("Entered geofence: " + JSON.stringify(e));
+	alert("Entered geofence: " + regions[0].identifier);
 });
 
 geoFence.addEventListener('exitregions', function(e) {
 	var regions = JSON.parse(e.regions);
 	Ti.API.info("Exited geofence: " + regions.identifier);
-	alert("Exiting geofence: " + regions.identifier);
+	alert("Exiting geofence: " + regions[0].identifier);
 });
 
-Geofence.addEventListener('error', function(e) {
+geoFence.addEventListener('error', function(e) {
 	Ti.API.info(JSON.stringify(e));
 });
 
@@ -65,4 +65,3 @@ if (monitoring) {
 } else {
 	geoFence.startMonitoringForRegions(JSON.stringify(fences));
 }
-

@@ -261,10 +261,10 @@ public class GooglegeofenceModule extends KrollModule implements
 			System.out.println(lng);
 
 			System.out.println(radius);
+			
+			System.out.println(identifier);
 
-			createGeofences(lng, lat, radius, identifier
-
-			);
+			createGeofences(lng, lat, radius, identifier);
 
 		}
 

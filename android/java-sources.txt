@@ -1,0 +1,7 @@
+"/Users/Sean/Documents/Appcelerator_Studio_Workspace/googlegeofence/android/build/generated/java/google/geofence/GooglegeofenceBootstrap.java"
+"/Users/Sean/Documents/Appcelerator_Studio_Workspace/googlegeofence/android/src/google/geofence/Constants.java"
+"/Users/Sean/Documents/Appcelerator_Studio_Workspace/googlegeofence/android/src/google/geofence/ExampleProxy.java"
+"/Users/Sean/Documents/Appcelerator_Studio_Workspace/googlegeofence/android/src/google/geofence/GeoFenceEvent.java"
+"/Users/Sean/Documents/Appcelerator_Studio_Workspace/googlegeofence/android/src/google/geofence/GeofenceErrorMessages.java"
+"/Users/Sean/Documents/Appcelerator_Studio_Workspace/googlegeofence/android/src/google/geofence/GeofenceTransitionsIntentService.java"
+"/Users/Sean/Documents/Appcelerator_Studio_Workspace/googlegeofence/android/src/google/geofence/GooglegeofenceModule.java"

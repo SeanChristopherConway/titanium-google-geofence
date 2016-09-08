@@ -3,8 +3,7 @@ var win = Ti.UI.createWindow({
 	backgroundColor : 'white'
 
 });
-var monitoring = false;
-var fences = null;
+
 var label = Ti.UI.createLabel();
 
 win.add(label);
@@ -17,34 +16,26 @@ var geoFence = require('google.geofence');
 
 geoFence.addEventListener('enterregions', function(e) {
 	var regions = JSON.parse(e.regions);
-	Ti.API.info("Entered geofence: " + JSON.stringify(e));
-	alert("Entered geofence: " + regions[0].identifier);
+	Ti.API.info("Entered geofence: " + regions.identifier);
+	alert("Entered geofence: " + regions.identifier);
 });
 
 geoFence.addEventListener('exitregions', function(e) {
 	var regions = JSON.parse(e.regions);
 	Ti.API.info("Exited geofence: " + regions.identifier);
-	alert("Exiting geofence: " + regions[0].identifier);
+	alert("Exiting geofence: " + regions.identifier);
 });
 
-geoFence.addEventListener('error', function(e) {
+Geofence.addEventListener('error', function(e) {
 	Ti.API.info(JSON.stringify(e));
 });
 
-geoFence.addEventListener('removeregions', function(e) {
-	Ti.API.info("Removing regions: " + JSON.stringify(e));
-	monitoring = false;
-	geoFence.startMonitoringForRegions(JSON.stringify(fences));
-});
 
 geoFence.addEventListener('monitorregions', function(e) {
 	Ti.API.info("Monitoring regions: " + JSON.stringify(e));
-	monitoring = true;
 });
-if (fences != null) {
-	fences = null;
-}
-fences = [{
+
+var fences = [{
 
 	"center" : {
 
@@ -60,8 +51,6 @@ fences = [{
 
 }];
 
-if (monitoring) {
-	geoFence.stopMonitoringAllRegions();
-} else {
-	geoFence.startMonitoringForRegions(JSON.stringify(fences));
-}
+geoFence.stopMonitoringAllRegions();
+geoFence.startMonitoringForRegions(JSON.stringify(fences));
+
